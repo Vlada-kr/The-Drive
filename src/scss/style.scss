@@ -1,0 +1,216 @@
+@import "vars";
+@import "fonts";
+@import "global";
+
+.box {
+    height: 100vh;
+}
+
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.black {
+    background-color: black;
+}
+
+.header-img__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .header__info {
+        color: #fff;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        z-index: 5;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+    .header__subtitle {
+        font-family: "Oswald", sans-serif;
+        font-size: 12px;
+        position: relative;
+        letter-spacing: 1px;
+        &::before{
+            content: "";
+            z-index: 5;
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            left: 85px;
+            top: 50%;
+            bottom: 50%;
+            transform: translateY(-50%);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            right: 85px;
+            top: 50%;
+            bottom: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .header__title {
+        font-family: "Oswald", sans-serif;
+        font-size: 20px;
+        color: #fff;
+        margin-bottom: 50px;
+        span {
+            display: block;
+            font-size: 105px;
+            margin-bottom: 50px;
+        }
+    }
+}
+.header__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 33.33%;
+    height: 470px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: rgba($color: #000, $alpha: 0.2);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    &.dark::before{
+        background-color: rgba($color: #000, $alpha: 0.5);
+    }
+}
+.header__inner {
+    z-index: 5;
+    width: 100%;
+    padding: 0 50px;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__btn {
+    cursor: pointer;
+    height: 25px;
+    width: 35px;
+    div {
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        & + div {
+            margin-top: 8px;
+        }
+    }
+}
+
+#modal {
+    display: none;
+    background-color: #000;
+    width: calc(100% - 40px);
+    height: calc(100vh - 60px);
+}
+.fancybox-bg {
+    background-color: transparent;
+}
+.fancybox-stage {
+    cursor: auto;
+}
+.fancybox-slide--html .fancybox-close-small {
+    right: 30px;
+    top: 0;
+}
+.fancybox-button svg {
+    width: 50px;
+    height: 50px;
+    path {
+        fill: #fff;
+    }
+}
+.fancybox-content {
+    outline: none;
+}
+.header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.header__menu-list li {
+    list-style: none;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    outline: none;
+    & + li {
+        margin-top: 15px;
+    }
+    text-transform: uppercase;
+    a {
+        outline: transparent;
+        color: #fff;
+        position: relative;
+        padding: 0 10px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 0;
+            top: 50%;
+            bottom: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: transform 0.5s, opacity 0.2s;
+        }
+        &:hover::before {
+            opacity: 1;
+            transform: translate(0px, -50%);
+        }
+        &:hover::after {
+            opacity: 1;
+            transform: translate(0px, -50%);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            right: 0;
+            top: 50%;
+            bottom: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: transform 0.5s, opacity 0.2s;
+        }
+    }
+    &:nth-child(1) {
+        a {
+            color: #777;
+        }
+    }
+}
+@import "media";

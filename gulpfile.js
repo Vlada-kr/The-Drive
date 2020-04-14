@@ -107,7 +107,8 @@ gulp.task("style", function () {
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
 			'node_modules/fullpage.js/dist/fullpage.min.css',
-			'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css'
+			'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+			'node_modules/owl.carousel/dist/assets/owl.carousel.min.css'
 		])
 		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -122,9 +123,11 @@ gulp.task("script", function () {
 	return gulp
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
+			'node_modules/owl.carousel/dist/owl.carousel.min.js',
 			'node_modules/fullpage.js/vendors/scrolloverflow.min.js',
 			'node_modules/fullpage.js/dist/fullpage.min.js',
 			'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'
+			
 		])
 		.pipe(size())
 		.pipe(sourcemaps.init())

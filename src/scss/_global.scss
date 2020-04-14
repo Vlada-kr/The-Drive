@@ -13,7 +13,11 @@ body {
   height: 100%;
   position: relative;
 }
-
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
 ul,
 ol,
 li,
@@ -30,10 +34,38 @@ h6 {
 
 a {
   text-decoration: none;
-    display: inline-block;
+  display: inline-block;
 }
 
 button:focus,
 input:focus {
   outline: transparent;
+}
+.page__name {
+  user-select: none;
+  span {
+    font-family: "Oswald", sans-serif;
+    font-size: 17px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px #111;
+    writing-mode: vertical-rl;
+    padding-bottom: 95px;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 70px;
+      width: 2px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-color: #fff;
+      bottom: 0;
+    }
+  }
+  position: absolute;
+  z-index: 5;
+  left: 35px;
+  bottom: 0;
 }

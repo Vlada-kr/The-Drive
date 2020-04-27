@@ -57,4 +57,32 @@ $(function () {
         dropDown.stop(false, true).slideToggle();
         e.preventDefault();
     });
+    $('.fifth-page__slider').owlCarousel({
+        items: 2,
+        nav: true,
+        loop: true,
+        navSpeed: 800,
+        dots: false,
+        center: true
+    });
+    $('.news__one').on('click', function (e) {
+        e.preventDefault();
+        $('.news__img-one, .news__info-one').addClass('active');
+    });
+    $('.news__two').on('click', function (e) {
+        e.preventDefault();
+        $('.news__img-two, .news__info-two').addClass('active');
+    });
+    $('.news__three').on('click', function (e) {
+        e.preventDefault();
+        $('.news__img-three, .news__info-three').addClass('active');
+    });
+    $('.news__four').on('click', function (e) {
+        e.preventDefault();
+        $('.news__img-four, .news__info-four').addClass('active');
+    });
+    $('.close').on('click', function (e) {
+        e.preventDefault();
+        $('.news').removeClass('active');
+    })
 });

@@ -124,9 +124,9 @@ gulp.task("script", function () {
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			'node_modules/owl.carousel/dist/owl.carousel.min.js',
+			'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
 			'node_modules/fullpage.js/vendors/scrolloverflow.min.js',
-			'node_modules/fullpage.js/dist/fullpage.min.js',
-			'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'
+			'node_modules/fullpage.js/dist/fullpage.min.js'
 			
 		])
 		.pipe(size())

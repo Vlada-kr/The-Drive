@@ -38,4 +38,23 @@ $(function () {
         navSpeed: 800,
         dots: false
     });
+    $('.fourth-page__slider').owlCarousel({
+        items: 1,
+        nav: true,
+        loop: true,
+        navSpeed: 800,
+        dots: false
+    });
+    $('.acc__title').click(function (e) {
+        var dropDown = $(this).closest('.acc__card').find('.acc__panel');
+        $(this).closest('.acc').find('.acc__panel').not(dropDown).slideUp();
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $(this).closest('.acc').find('.acc__title.active').removeClass('active');
+            $(this).addClass('active');
+        }
+        dropDown.stop(false, true).slideToggle();
+        e.preventDefault();
+    });
 });
